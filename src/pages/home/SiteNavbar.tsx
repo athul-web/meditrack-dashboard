@@ -27,8 +27,8 @@ export function SiteNavbar() {
       {/* Brand */}
       <a href="#hero" className="flex items-center gap-3 no-underline shrink-0">
         {/* Logo mark */}
-        <div className="relative w-10 h-10 shrink-0">
-          <img src="/favicon.svg" alt="MediTrack logo" width="40" height="40" className="w-10 h-10 object-contain" />
+        <div className="relative w-12 h-12 shrink-0">
+          <img src="/favicon.svg" alt="MediTrack logo" width="48" height="48" className="w-12 h-12 object-contain" />
         </div>
         <div>
           <div className="text-white font-bold text-lg leading-tight tracking-wide">MediTrack</div>
