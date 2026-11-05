@@ -184,66 +184,6 @@ export function HospitalsPage() {
             </div>
           </div>
 
-          {/* 2. DIRECTORY & LIVE STATUS BANNER */}
-          <div
-            className="rounded-3xl p-6 sm:p-8 text-white relative overflow-hidden shadow-xl border border-[#087D91]/40"
-            style={{
-              background: 'linear-gradient(135deg, #001525 0%, #063B56 50%, #073B55 100%)',
-            }}
-          >
-            {/* Subtle radial cyan glow background */}
-            <div
-              className="absolute -right-12 -top-12 w-80 h-80 rounded-full pointer-events-none opacity-15"
-              style={{
-                background: 'radial-gradient(circle, #00D5E8 0%, transparent 70%)',
-              }}
-            />
-
-            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
-              <div>
-                {/* Live Network Status Indicator */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#00D5E8]/15 border border-[#00D5E8]/40 text-[#00D5E8] mb-3 backdrop-blur-xs">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00D5E8] opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00D5E8]" />
-                  </span>
-                  <span>Directory &amp; Live Status • Network Operational</span>
-                </div>
-
-                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mb-2">
-                  Active Regional Facilities
-                </h2>
-                <p className="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
-                  Direct connection with emergency coordination centers. Resource numbers reflect confirmed telemetry logs within the last 60 minutes.
-                </p>
-              </div>
-
-              {/* Telemetry Counter Metrics */}
-              <div className="flex items-center gap-4 sm:gap-6 bg-white/10 border border-white/15 rounded-2xl px-5 py-3.5 backdrop-blur-xs shrink-0">
-                <div>
-                  <div className="text-2xl sm:text-3xl font-black text-[#00D5E8]">{DEMO_HOSPITALS.length}</div>
-                  <div className="text-[11px] text-slate-300 font-medium uppercase tracking-wider">
-                    Verified Facilities
-                  </div>
-                </div>
-                <div className="w-px h-10 bg-white/15" />
-                <div>
-                  <div className="text-2xl sm:text-3xl font-black text-white">99.8%</div>
-                  <div className="text-[11px] text-slate-300 font-medium uppercase tracking-wider">
-                    Telemetry Uptime
-                  </div>
-                </div>
-                <div className="w-px h-10 bg-white/15" />
-                <div>
-                  <div className="text-2xl sm:text-3xl font-black text-emerald-400">Live</div>
-                  <div className="text-[11px] text-slate-300 font-medium uppercase tracking-wider">
-                    Auto-Sync
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* 3. MAIN DIRECTORY LAYOUT: Left Filter Sidebar & Right Results */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* Filter Hospitals Sidebar (Desktop Left Column) */}
