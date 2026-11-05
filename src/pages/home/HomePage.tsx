@@ -6,6 +6,7 @@ import { FeatureStrip } from './FeatureStrip';
 import { HospitalsSection } from './HospitalsSection';
 import { EmergencyPanel } from './EmergencyPanel';
 import { StaffPanel } from './StaffPanel';
+import { MedicalOrbit } from './MedicalOrbit';
 import { DEMO_HOSPITALS } from '../../data/demoHospitals';
 import type { DemoHospital, QuickAccessTag } from '../../types/hospital';
 
@@ -51,6 +52,19 @@ export function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           {/* Feature strip */}
           <FeatureStrip />
+
+          {/* Medical Resource Orbit Visualization */}
+          <section
+            aria-label="Medical Resource Ecosystem"
+            className="rounded-[22px] mb-8 overflow-hidden"
+            style={{ background: '#001525', border: '1px solid rgba(0,213,232,0.15)' }}
+          >
+            <div className="text-center pt-8 pb-2">
+              <h2 className="text-xs font-bold tracking-[0.18em] uppercase" style={{ color: '#19D5E5' }}>Medical Resource Ecosystem</h2>
+              <p className="text-[11px] mt-1" style={{ color: 'rgba(255,255,255,0.45)' }}>Live resources orbiting our care network</p>
+            </div>
+            <MedicalOrbit />
+          </section>
 
           {/* Main Content Layout: Left 68% Hospitals / Right 32% Side Panels */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
