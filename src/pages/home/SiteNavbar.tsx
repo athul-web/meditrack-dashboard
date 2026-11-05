@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { Users } from 'lucide-react';
 
 export function SiteNavbar() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const isHospitals = location.pathname.startsWith('/hospitals');
+
   const NAV_LINKS = [
-    { label: 'Home', href: '#hero' },
-    { label: 'Hospitals', href: '#hospitals' },
-    { label: 'About', href: '#about' },
-    { label: 'Contact', href: '#contact' },
+    { label: 'Home', href: isHospitals ? '/' : '#hero', isRouterLink: isHospitals },
+    { label: 'Hospitals', href: '/hospitals', isRouterLink: true },
+    { label: 'About', href: isHospitals ? '/#about' : '#about', isRouterLink: false },
+    { label: 'Contact', href: isHospitals ? '/#contact' : '#contact', isRouterLink: false },
   ];
 
   return (
@@ -25,7 +28,7 @@ export function SiteNavbar() {
       aria-label="Site navigation"
     >
       {/* Brand */}
-      <a href="#hero" className="flex items-center gap-1 no-underline shrink-0">
+      <Link to="/" className="flex items-center gap-1 no-underline shrink-0">
         {/* Logo mark */}
         <div className="relative w-[70px] h-[70px] shrink-0">
           <img src="/logo.png" alt="MediTrack logo" width="70" height="70" className="w-[70px] h-[70px] object-contain" />
@@ -36,33 +39,58 @@ export function SiteNavbar() {
             Emergency Resources | When It Matters
           </div>
         </div>
-      </a>
+      </Link>
 
       {/* Desktop nav links */}
       <ul className="hidden md:flex items-center gap-1 list-none m-0 p-0 absolute left-1/2 -translate-x-1/2">
         {NAV_LINKS.map((link) => {
-          const isActive = link.label === 'Home';
+          const isActive = isHospitals ? link.label === 'Hospitals' : link.label === 'Home';
+          const linkClasses = "px-4 py-2 text-sm font-medium rounded-md no-underline flex flex-col items-center transition-colors";
+          const linkStyle = { color: isActive ? '#19D5E5' : 'rgba(255,255,255,0.75)' };
+
           return (
             <li key={link.label}>
-              <a
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium rounded-md no-underline flex flex-col items-center transition-colors"
-                style={{ color: isActive ? '#19D5E5' : 'rgba(255,255,255,0.75)' }}
-                onMouseEnter={(e) => {
-                  if (!isActive) (e.currentTarget as HTMLAnchorElement).style.color = 'white';
-                }}
-                onMouseLeave={(e) => {
-                  if (!isActive) (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)';
-                }}
-              >
-                {link.label}
-                {isActive && (
-                  <span
-                    className="mt-0.5 h-0.5 w-full rounded-full"
-                    style={{ background: '#19D5E5' }}
-                  />
-                )}
-              </a>
+              {link.isRouterLink ? (
+                <Link
+                  to={link.href}
+                  className={linkClasses}
+                  style={linkStyle}
+                  onMouseEnter={(e) => {
+                    if (!isActive) (e.currentTarget as HTMLElement).style.color = 'white';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.75)';
+                  }}
+                >
+                  {link.label}
+                  {isActive && (
+                    <span
+                      className="mt-0.5 h-0.5 w-full rounded-full"
+                      style={{ background: '#19D5E5' }}
+                    />
+                  )}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className={linkClasses}
+                  style={linkStyle}
+                  onMouseEnter={(e) => {
+                    if (!isActive) (e.currentTarget as HTMLAnchorElement).style.color = 'white';
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)';
+                  }}
+                >
+                  {link.label}
+                  {isActive && (
+                    <span
+                      className="mt-0.5 h-0.5 w-full rounded-full"
+                      style={{ background: '#19D5E5' }}
+                    />
+                  )}
+                </a>
+              )}
             </li>
           );
         })}
@@ -108,16 +136,27 @@ export function SiteNavbar() {
             borderTop: '1px solid rgba(255,255,255,0.08)',
           }}
         >
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="text-white/80 py-2 text-sm no-underline hover:text-white transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) =>
+            link.isRouterLink ? (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-white/80 py-2 text-sm no-underline hover:text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                className="text-white/80 py-2 text-sm no-underline hover:text-white transition-colors"
+              >
+                {link.label}
+              </a>
+            )
+          )}
           <button
             onClick={() => {
               setMobileOpen(false);

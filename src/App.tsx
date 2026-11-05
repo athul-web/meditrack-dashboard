@@ -9,6 +9,7 @@ import { AlertsEvents } from './pages/AlertsEvents';
 import { ResourceStatus } from './pages/ResourceStatus';
 import { Settings } from './pages/Settings';
 import { HomePage } from './pages/home/HomePage';
+import { HospitalsPage } from './pages/hospitals/HospitalsPage';
 import { useSimulation } from './hooks/useSimulation';
 import { useSimulationStore } from './store/simulationStore';
 
@@ -44,6 +45,9 @@ export default function App() {
       <Routes>
         {/* Public homepage */}
         <Route path="/" element={<HomePage />} />
+
+        {/* Public hospitals directory */}
+        <Route path="/hospitals" element={<HospitalsPage />} />
 
         {/* Operator dashboard (all existing pages preserved under /dashboard) */}
         <Route path="/dashboard/*" element={<DashboardContent />} />
