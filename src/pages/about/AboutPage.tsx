@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+﻿import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MapPin,
@@ -20,6 +20,7 @@ import {
   AlertCircle,
 } from 'lucide-react';
 import { SiteNavbar } from '../home/SiteNavbar';
+import { MedicalOrbit } from './MedicalOrbit';
 
 /* ─── Intersection Observer hook for section fade-ins ─── */
 function useFadeIn() {
@@ -336,64 +337,9 @@ export function AboutPage() {
                 </div>
               </div>
 
-              {/* Right — Medical network illustration */}
-              <div className="hidden lg:flex items-center justify-center">
-                <div className="relative w-[380px] h-[380px]">
-                  {/* Outer ring */}
-                  <div
-                    className="absolute inset-0 rounded-full border border-dashed opacity-20"
-                    style={{ borderColor: '#00D5E8' }}
-                  />
-                  {/* Middle ring */}
-                  <div
-                    className="absolute inset-10 rounded-full border opacity-15"
-                    style={{ borderColor: '#00D5E8' }}
-                  />
-
-                  {/* Centre icon */}
-                  <div
-                    className="absolute inset-0 flex items-center justify-center"
-                  >
-                    <div
-                      className="w-24 h-24 rounded-full flex items-center justify-center shadow-2xl"
-                      style={{
-                        background: 'linear-gradient(135deg, #052F4B 0%, #087D91 100%)',
-                        border: '2px solid rgba(0,213,232,0.4)',
-                        boxShadow: '0 0 40px rgba(0,213,232,0.25)',
-                      }}
-                    >
-                      <Activity size={40} className="text-[#00D5E8]" />
-                    </div>
-                  </div>
-
-                  {/* Orbiting node cards */}
-                  {[
-                    { top: '8%', left: '50%', label: 'ICU Beds', icon: <Building size={14} />, color: '#E4F6FA', textColor: '#073B55' },
-                    { top: '50%', left: '88%', label: 'Ventilators', icon: <Wind size={14} />, color: '#E4F6FA', textColor: '#073B55' },
-                    { top: '84%', left: '62%', label: 'Oxygen', icon: <Droplets size={14} />, color: '#F0FDF4', textColor: '#15803D' },
-                    { top: '84%', left: '22%', label: 'Emergency', icon: <AlertCircle size={14} />, color: '#FEF2F2', textColor: '#DC2626' },
-                    { top: '50%', left: '4%', label: 'Live Status', icon: <Activity size={14} />, color: '#E0F2FE', textColor: '#0369A1' },
-                    { top: '15%', left: '15%', label: 'Navigation', icon: <Navigation size={14} />, color: '#FFFBEB', textColor: '#B45309' },
-                  ].map((node, i) => (
-                    <div
-                      key={i}
-                      className="absolute transform -translate-x-1/2 -translate-y-1/2"
-                      style={{ top: node.top, left: node.left }}
-                    >
-                      <div
-                        className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-[11px] font-bold shadow-md whitespace-nowrap"
-                        style={{
-                          background: node.color,
-                          color: node.textColor,
-                          border: `1px solid ${node.textColor}22`,
-                        }}
-                      >
-                        <span style={{ color: node.textColor }}>{node.icon}</span>
-                        {node.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+              {/* Right — Medical Orbit Visualization */}
+              <div className="flex items-center justify-center w-full mt-10 lg:mt-0">
+                <MedicalOrbit />
               </div>
             </div>
           </div>
