@@ -157,19 +157,6 @@ export function MedicalOrbit() {
           position: 'relative',
         }}
       >
-        {/* 1. Dark navy circular backdrop with radial gradient */}
-        <div
-          aria-hidden="true"
-          style={{
-            position: 'absolute',
-            inset: 0,
-            borderRadius: '50%',
-            background: 'radial-gradient(circle at 50% 50%, #052F4B 0%, #001C30 55%, #001525 100%)',
-            boxShadow: 'inset 0 0 50px 15px rgba(0,21,37,0.85), 0 10px 40px rgba(0,0,0,0.3)',
-            border: '1px solid rgba(0, 213, 232, 0.12)',
-          }}
-        />
-
         {/* 2. Stationary subtle blue grid lines inside the backdrop */}
         <svg
           aria-hidden="true"
