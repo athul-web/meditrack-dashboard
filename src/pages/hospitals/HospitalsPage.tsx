@@ -464,7 +464,7 @@ export function HospitalsPage() {
             <Link to="/#about" className="hover:text-white transition-colors">
               About
             </Link>
-            <Link to="/#contact" className="hover:text-white transition-colors">
+            <Link to="/contact" className="hover:text-white transition-colors">
               Contact
             </Link>
           </div>

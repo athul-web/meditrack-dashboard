@@ -11,6 +11,7 @@ import { Settings } from './pages/Settings';
 import { HomePage } from './pages/home/HomePage';
 import { HospitalsPage } from './pages/hospitals/HospitalsPage';
 import { AboutPage } from './pages/about/AboutPage';
+import { ContactPage } from './pages/contact/ContactPage';
 import { useSimulation } from './hooks/useSimulation';
 import { useSimulationStore } from './store/simulationStore';
 
@@ -52,6 +53,9 @@ export default function App() {
 
         {/* Public about page */}
         <Route path="/about" element={<AboutPage />} />
+
+        {/* Public contact page */}
+        <Route path="/contact" element={<ContactPage />} />
 
         {/* Operator dashboard (all existing pages preserved under /dashboard) */}
         <Route path="/dashboard/*" element={<DashboardContent />} />

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { SiteNavbar } from './SiteNavbar';
 import { HeroSection } from './HeroSection';
 import { FeatureStrip } from './FeatureStrip';
@@ -96,9 +97,7 @@ export function HomePage() {
             <a href="#hero" id="about" className="hover:text-white transition-colors">
               About
             </a>
-            <a href="#contact" className="hover:text-white transition-colors">
-              Contact
-            </a>
+            <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
           </div>
 
           <div className="text-xs text-slate-400 text-center sm:text-right">

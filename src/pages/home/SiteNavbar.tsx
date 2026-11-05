@@ -9,12 +9,13 @@ export function SiteNavbar() {
 
   const isHospitals = location.pathname.startsWith('/hospitals');
   const isAbout = location.pathname.startsWith('/about');
+  const isContact = location.pathname.startsWith('/contact');
 
   const NAV_LINKS = [
-    { label: 'Home', href: (isHospitals || isAbout) ? '/' : '#hero', isRouterLink: isHospitals || isAbout },
+    { label: 'Home', href: (isHospitals || isAbout || isContact) ? '/' : '#hero', isRouterLink: isHospitals || isAbout || isContact },
     { label: 'Hospitals', href: '/hospitals', isRouterLink: true },
     { label: 'About', href: '/about', isRouterLink: true },
-    { label: 'Contact', href: (isHospitals || isAbout) ? '/#contact' : '#contact', isRouterLink: false },
+    { label: 'Contact', href: '/contact', isRouterLink: true },
   ];
 
   return (
@@ -45,7 +46,7 @@ export function SiteNavbar() {
       {/* Desktop nav links */}
       <ul className="hidden md:flex items-center gap-1 list-none m-0 p-0 absolute left-1/2 -translate-x-1/2">
         {NAV_LINKS.map((link) => {
-          const isActive = isHospitals ? link.label === 'Hospitals' : isAbout ? link.label === 'About' : link.label === 'Home';
+          const isActive = isHospitals ? link.label === 'Hospitals' : isAbout ? link.label === 'About' : isContact ? link.label === 'Contact' : link.label === 'Home';
           const linkClasses = "px-4 py-2 text-sm font-medium rounded-md no-underline flex flex-col items-center transition-colors";
           const linkStyle = { color: isActive ? '#19D5E5' : 'rgba(255,255,255,0.75)' };
 

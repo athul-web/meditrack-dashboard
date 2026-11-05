@@ -696,7 +696,7 @@ export function AboutPage() {
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <Link to="/hospitals" className="hover:text-white transition-colors">Hospitals</Link>
             <Link to="/about" className="text-white font-semibold transition-colors">About</Link>
-            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            <Link to="/contact" className="hover:text-white transition-colors">Contact</Link>
           </div>
 
           <div className="text-xs text-slate-400 text-center sm:text-right">
