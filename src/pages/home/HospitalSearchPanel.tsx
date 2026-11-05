@@ -98,7 +98,7 @@ export function HospitalSearchPanel({ onSearch }: HospitalSearchPanelProps) {
       {/* Top row */}
       <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
         {/* Search input */}
-        <div className="flex items-center gap-2 flex-1 bg-white rounded-full px-4 py-2.5 shadow-sm">
+        <div className="flex items-center gap-2 flex-1 rounded-full px-4 py-2.5 search-input-wrapper">
           <Search size={16} style={{ color: '#60778C' }} className="shrink-0" />
           <input
             type="text"
@@ -115,12 +115,11 @@ export function HospitalSearchPanel({ onSearch }: HospitalSearchPanelProps) {
         <div className="relative">
           <button
             onClick={() => setLocationOpen(!locationOpen)}
-            className="flex items-center gap-2 bg-white rounded-full px-4 py-2.5 text-sm font-medium shadow-sm whitespace-nowrap cursor-pointer"
-            style={{ color: '#122B43', border: '1px solid #D9E6EE' }}
+            className="flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium whitespace-nowrap cursor-pointer location-selector-btn"
           >
-            <MapPin size={14} style={{ color: '#087D91' }} />
+            <MapPin size={14} className="loc-icon shrink-0" />
             <span className="max-w-[140px] truncate">{location}</span>
-            <ChevronDown size={14} style={{ color: '#60778C' }} />
+            <ChevronDown size={14} style={{ color: '#60778C' }} className="shrink-0" />
           </button>
           {locationOpen && (
             <div
@@ -157,8 +156,8 @@ export function HospitalSearchPanel({ onSearch }: HospitalSearchPanelProps) {
         <button
           onClick={handleFindMe}
           disabled={locating}
-          className="flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shrink-0 cursor-pointer transition-opacity"
-          style={{ background: '#087D91', opacity: locating ? 0.7 : 1 }}
+          className="flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shrink-0 cursor-pointer search-action-btn find-me-btn"
+          style={{ opacity: locating ? 0.7 : 1 }}
           title="Detect my location"
         >
           {locating ? (
@@ -167,7 +166,7 @@ export function HospitalSearchPanel({ onSearch }: HospitalSearchPanelProps) {
               <path d="M12 2a10 10 0 0 1 10 10" />
             </svg>
           ) : (
-            <Navigation size={14} />
+            <Navigation size={14} className="btn-icon" />
           )}
           {locating ? 'Locating…' : 'Find Me'}
         </button>
@@ -175,16 +174,9 @@ export function HospitalSearchPanel({ onSearch }: HospitalSearchPanelProps) {
         {/* Search button */}
         <button
           onClick={handleSearch}
-          className="flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shrink-0 cursor-pointer"
-          style={{ background: '#063B56' }}
-          onMouseEnter={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background = '#052F4B';
-          }}
-          onMouseLeave={(e) => {
-            (e.currentTarget as HTMLButtonElement).style.background = '#063B56';
-          }}
+          className="flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white shrink-0 cursor-pointer search-action-btn search-submit-btn"
         >
-          <Search size={14} />
+          <Search size={14} className="btn-icon" />
           Search
         </button>
       </div>
@@ -204,7 +196,9 @@ export function HospitalSearchPanel({ onSearch }: HospitalSearchPanelProps) {
               <button
                 key={label}
                 onClick={() => handleTagClick(label)}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold cursor-pointer transition-all"
+                className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold cursor-pointer quick-filter-chip ${
+                  isSelected ? 'quick-filter-chip-active' : 'quick-filter-chip-inactive'
+                }`}
                 style={
                   isSelected
                     ? { background: '#063B56', color: 'white', border: '1px solid #063B56' }
@@ -221,7 +215,7 @@ export function HospitalSearchPanel({ onSearch }: HospitalSearchPanelProps) {
             );
           })}
           <button
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold cursor-pointer quick-filter-chip quick-filter-chip-inactive"
             style={{
               background: 'rgba(255,255,255,0.1)',
               color: 'rgba(255,255,255,0.7)',
