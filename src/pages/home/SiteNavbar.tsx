@@ -25,7 +25,7 @@ export function SiteNavbar() {
       aria-label="Site navigation"
     >
       {/* Brand */}
-      <a href="#hero" className="flex items-center gap-3 no-underline shrink-0">
+      <a href="#hero" className="flex items-center gap-1 no-underline shrink-0">
         {/* Logo mark */}
         <div className="relative w-[70px] h-[70px] shrink-0">
           <img src="/logo.png" alt="MediTrack logo" width="70" height="70" className="w-[70px] h-[70px] object-contain" />
