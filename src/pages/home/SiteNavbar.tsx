@@ -20,7 +20,7 @@ export function SiteNavbar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3"
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-3 sm:px-6 py-2 sm:py-3"
       style={{
         background: 'rgba(5,47,75,0.92)',
         backdropFilter: 'blur(12px)',
@@ -30,14 +30,14 @@ export function SiteNavbar() {
       aria-label="Site navigation"
     >
       {/* Brand */}
-      <Link to="/" className="flex items-center gap-1 no-underline shrink-0">
+      <Link to="/" className="flex items-center gap-2 no-underline shrink-0 min-w-0">
         {/* Logo mark */}
-        <div className="relative w-[70px] h-[70px] shrink-0">
-          <img src="/logo.png" alt="MediTrack logo" width="70" height="70" className="w-[70px] h-[70px] object-contain" />
+        <div className="relative w-10 h-10 lg:w-[70px] lg:h-[70px] shrink-0">
+          <img src="/logo.png" alt="MediTrack logo" width="70" height="70" className="w-10 h-10 lg:w-[70px] lg:h-[70px] object-contain" />
         </div>
-        <div>
-          <div className="text-white font-bold text-lg leading-tight tracking-wide">MediTrack</div>
-          <div className="text-xs leading-tight" style={{ color: '#19D5E5' }}>
+        <div className="min-w-0">
+          <div className="text-white font-bold text-base lg:text-lg leading-tight tracking-wide">MediTrack</div>
+          <div className="hidden lg:block text-xs leading-tight" style={{ color: '#19D5E5' }}>
             Emergency Resources | When It Matters
           </div>
         </div>

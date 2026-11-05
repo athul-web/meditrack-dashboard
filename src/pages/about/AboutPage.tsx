@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   MapPin,
@@ -244,7 +244,7 @@ export function AboutPage() {
     <div className="min-h-screen flex flex-col font-sans" style={{ background: '#F3F8FC' }}>
       <SiteNavbar />
 
-      <main className="flex-1 pt-24">
+      <main className="flex-1 pt-20 sm:pt-24">
         {/* ═══════════════════════════════════════════
             SECTION 1 — Hero: About MediTrack
         ═══════════════════════════════════════════ */}
@@ -278,8 +278,8 @@ export function AboutPage() {
             }}
           />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-28">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               {/* Left — Text Content */}
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest mb-6"
@@ -288,7 +288,7 @@ export function AboutPage() {
                   <span>About MediTrack</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6">
+                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight mb-6 break-words">
                   Healthcare resource
                   <span style={{ color: '#00D5E8' }}> discovery</span>,<br />
                   when it matters most.
@@ -298,10 +298,10 @@ export function AboutPage() {
                   MediTrack is a healthcare resource discovery and emergency coordination platform built to close the information gap between patients in need and hospitals with available capacity.
                 </p>
 
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                   <Link
                     to="/hospitals"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white no-underline transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold text-white no-underline transition-all min-h-[44px]"
                     style={{ background: '#087D91' }}
                     onMouseEnter={(e) => {
                       (e.currentTarget as HTMLElement).style.background = '#0a95ac';
@@ -317,7 +317,7 @@ export function AboutPage() {
                   </Link>
                   <Link
                     to="/"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-bold no-underline transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full text-sm font-bold no-underline transition-all min-h-[44px]"
                     style={{
                       color: 'rgba(255,255,255,0.85)',
                       border: '1px solid rgba(255,255,255,0.25)',
@@ -338,7 +338,7 @@ export function AboutPage() {
               </div>
 
               {/* Right — Medical Orbit Visualization */}
-              <div className="flex items-center justify-center w-full mt-10 lg:mt-0">
+              <div className="flex items-center justify-center w-full mt-6 sm:mt-10 lg:mt-0">
                 <MedicalOrbit />
               </div>
             </div>
@@ -364,10 +364,10 @@ export function AboutPage() {
         {/* ═══════════════════════════════════════════
             SECTION 2 — Our Mission
         ═══════════════════════════════════════════ */}
-        <section className="py-20 sm:py-28">
+        <section className="py-14 sm:py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeSection>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                 {/* Left — Mission statement */}
                 <div>
                   <div className="flex items-center gap-2 mb-4">
@@ -377,7 +377,7 @@ export function AboutPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-3xl sm:text-4xl font-extrabold text-[#122B43] tracking-tight mb-6 leading-tight">
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#122B43] tracking-tight mb-6 leading-tight">
                     Bridging the gap between<br />
                     <span style={{ color: '#087D91' }}>critical need</span> and available care.
                   </h2>
@@ -451,19 +451,19 @@ export function AboutPage() {
             SECTION 3 — How It Works
         ═══════════════════════════════════════════ */}
         <section
-          className="py-20 sm:py-28"
+          className="py-14 sm:py-20 lg:py-28"
           style={{ background: 'linear-gradient(180deg, #EBF4FA 0%, #F3F8FC 100%)' }}
         >
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeSection>
-              <div className="text-center mb-14">
+              <div className="text-center mb-10 sm:mb-14">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#087D91]" />
                   <span className="text-xs font-bold uppercase tracking-widest text-[#087D91]">
                     How It Works
                   </span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#122B43] tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#122B43] tracking-tight mb-4">
                   From hospital registration to emergency care
                 </h2>
                 <p className="text-sm text-[#60778C] max-w-xl mx-auto leading-relaxed">
@@ -474,7 +474,7 @@ export function AboutPage() {
 
             <FadeSection delay={150}>
               <div
-                className="bg-white rounded-3xl border border-[#D9E6EE] p-8 sm:p-12"
+                className="bg-white rounded-2xl sm:rounded-3xl border border-[#D9E6EE] p-5 sm:p-8 md:p-12"
                 style={{ boxShadow: '0 4px 24px rgba(18,43,67,0.06)' }}
               >
                 {workflowSteps.map((step, i) => (
@@ -495,17 +495,17 @@ export function AboutPage() {
         {/* ═══════════════════════════════════════════
             SECTION 4 — Core Capabilities
         ═══════════════════════════════════════════ */}
-        <section className="py-20 sm:py-28">
+        <section className="py-14 sm:py-20 lg:py-28">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeSection>
-              <div className="text-center mb-14">
+              <div className="text-center mb-10 sm:mb-14">
                 <div className="flex items-center justify-center gap-2 mb-4">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#087D91]" />
                   <span className="text-xs font-bold uppercase tracking-widest text-[#087D91]">
                     Core Capabilities
                   </span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-[#122B43] tracking-tight mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#122B43] tracking-tight mb-4">
                   Everything you need in a critical moment
                 </h2>
                 <p className="text-sm text-[#60778C] max-w-xl mx-auto leading-relaxed">
@@ -527,7 +527,7 @@ export function AboutPage() {
         {/* ═══════════════════════════════════════════
             SECTION 5 — Call to Action
         ═══════════════════════════════════════════ */}
-        <section className="py-20 sm:py-28">
+        <section className="py-14 sm:py-20 lg:py-28">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeSection>
               <div
@@ -547,7 +547,7 @@ export function AboutPage() {
                   style={{ background: 'radial-gradient(circle, #087D91 0%, transparent 70%)' }}
                 />
 
-                <div className="relative z-10 p-10 sm:p-16 flex flex-col md:flex-row items-center justify-between gap-10">
+                <div className="relative z-10 p-6 sm:p-10 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-10">
                   {/* Text */}
                   <div className="max-w-lg text-center md:text-left">
                     {/* Live pulsing badge */}
@@ -560,7 +560,7 @@ export function AboutPage() {
                       Network is live
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4 leading-tight">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-4 leading-tight">
                       Ready to find the right hospital when it matters?
                     </h2>
                     <p className="text-sm text-slate-300 leading-relaxed mb-0">
@@ -572,7 +572,7 @@ export function AboutPage() {
                   <div className="flex flex-col gap-3 w-full md:w-auto shrink-0">
                     <Link
                       to="/hospitals"
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-sm font-bold text-white no-underline transition-all whitespace-nowrap"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-sm font-bold text-white no-underline transition-all whitespace-nowrap min-h-[48px]"
                       style={{
                         background: 'linear-gradient(135deg, #087D91 0%, #00D5E8 100%)',
                         boxShadow: '0 4px 20px rgba(0,213,232,0.3)',
@@ -593,7 +593,7 @@ export function AboutPage() {
 
                     <button
                       onClick={() => window.location.href = '/dashboard'}
-                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-sm font-bold transition-all whitespace-nowrap cursor-pointer"
+                      className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl text-sm font-bold transition-all whitespace-nowrap cursor-pointer min-h-[48px]"
                       style={{
                         color: 'rgba(255,255,255,0.8)',
                         border: '1px solid rgba(255,255,255,0.2)',
@@ -638,7 +638,7 @@ export function AboutPage() {
             </div>
           </div>
 
-          <div className="flex items-center gap-6 text-xs text-slate-400">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-slate-400">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <Link to="/hospitals" className="hover:text-white transition-colors">Hospitals</Link>
             <Link to="/about" className="text-white font-semibold transition-colors">About</Link>
