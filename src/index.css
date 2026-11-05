@@ -373,18 +373,7 @@ html {
   .search-action-btn:hover,
   .quick-filter-chip:hover,
   .find-me-btn:hover,
-  .search-submit-btn:hover,
-  .card-lift:hover {
+  .search-submit-btn:hover {
     transform: none !important;
   }
-}
-
-/* ===== Healthcare Hospital Discovery Styles ===== */
-.card-lift {
-  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1), border-color 200ms ease;
-}
-
-.card-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(7, 59, 85, 0.1), 0 8px 10px -6px rgba(7, 59, 85, 0.05);
 }
