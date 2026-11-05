@@ -10,6 +10,7 @@ import { ResourceStatus } from './pages/ResourceStatus';
 import { Settings } from './pages/Settings';
 import { HomePage } from './pages/home/HomePage';
 import { HospitalsPage } from './pages/hospitals/HospitalsPage';
+import { AboutPage } from './pages/about/AboutPage';
 import { useSimulation } from './hooks/useSimulation';
 import { useSimulationStore } from './store/simulationStore';
 
@@ -48,6 +49,9 @@ export default function App() {
 
         {/* Public hospitals directory */}
         <Route path="/hospitals" element={<HospitalsPage />} />
+
+        {/* Public about page */}
+        <Route path="/about" element={<AboutPage />} />
 
         {/* Operator dashboard (all existing pages preserved under /dashboard) */}
         <Route path="/dashboard/*" element={<DashboardContent />} />
