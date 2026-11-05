@@ -250,7 +250,7 @@ function ContactForm() {
             name="fullName"
             type="text"
             autoComplete="name"
-            placeholder="e.g. Athul Krishnan"
+            placeholder="e.g. Avandhika Krishna"
             value={formData.fullName}
             onChange={handleChange}
             onBlur={handleBlur}
