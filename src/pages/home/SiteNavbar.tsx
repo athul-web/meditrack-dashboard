@@ -28,12 +28,7 @@ export function SiteNavbar() {
       <a href="#hero" className="flex items-center gap-3 no-underline shrink-0">
         {/* Logo mark */}
         <div className="relative w-10 h-10 shrink-0">
-          <svg viewBox="0 0 40 40" width="40" height="40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="18" fill="#087D91" fillOpacity="0.3" />
-            <circle cx="20" cy="20" r="18" stroke="#19D5E5" strokeWidth="1.2" strokeDasharray="3 2" />
-            <rect x="16.5" y="10" width="7" height="20" rx="2" fill="#19D5E5" />
-            <rect x="10" y="16.5" width="20" height="7" rx="2" fill="#19D5E5" />
-          </svg>
+          <img src="/favicon.svg" alt="MediTrack logo" width="40" height="40" className="w-10 h-10 object-contain" />
         </div>
         <div>
           <div className="text-white font-bold text-lg leading-tight tracking-wide">MediTrack</div>

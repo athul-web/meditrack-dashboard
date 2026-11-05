@@ -1,4 +1,92 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#1e2a3a"/>
-  <path d="M8 16h16M16 8v16" stroke="#38c9a8" stroke-width="3" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g0" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B609B"/>
+      <stop offset="100%" stop-color="#1B87C4"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B87C4"/>
+      <stop offset="100%" stop-color="#1EAAAD"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1EAAAD"/>
+      <stop offset="100%" stop-color="#4CB88C"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4CB88C"/>
+      <stop offset="100%" stop-color="#84CB4F"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#84CB4F"/>
+      <stop offset="100%" stop-color="#1B609B"/>
+    </linearGradient>
+
+    <radialGradient id="h0" cx="35%" cy="35%" r="65%"><stop offset="0%" stop-color="#3C95D4"/><stop offset="100%" stop-color="#13518A"/></radialGradient>
+    <radialGradient id="h1" cx="35%" cy="35%" r="65%"><stop offset="0%" stop-color="#33B5C7"/><stop offset="100%" stop-color="#16718C"/></radialGradient>
+    <radialGradient id="h2" cx="35%" cy="35%" r="65%"><stop offset="0%" stop-color="#52CCA2"/><stop offset="100%" stop-color="#1F8B67"/></radialGradient>
+    <radialGradient id="h3" cx="35%" cy="35%" r="65%"><stop offset="0%" stop-color="#89D36F"/><stop offset="100%" stop-color="#3B8B3E"/></radialGradient>
+    <radialGradient id="h4" cx="35%" cy="35%" r="65%"><stop offset="0%" stop-color="#AEE161"/><stop offset="100%" stop-color="#679C28"/></radialGradient>
+
+    <linearGradient id="pinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#248FCA"/>
+      <stop offset="100%" stop-color="#0E4370"/>
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1AB8AF"/>
+      <stop offset="100%" stop-color="#0B5C62"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Central Location Pin -->
+  <g id="center-pin">
+    <ellipse cx="250" cy="285" rx="36" ry="10" fill="none" stroke="url(#ringGrad)" stroke-width="5" opacity="0.9"/>
+    <path d="M 250 178
+             C 226 178, 208 196, 208 220
+             C 208 250, 242 280, 250 288
+             C 258 280, 292 250, 292 220
+             C 292 196, 274 178, 250 178 Z"
+          fill="url(#pinGrad)"/>
+    <circle cx="250" cy="215" r="11" fill="#081F33" opacity="0.3"/>
+    <path d="M 250 178
+             C 226 178, 208 196, 208 220
+             C 208 250, 242 280, 250 288
+             L 250 178 Z"
+          fill="#FFFFFF" opacity="0.14"/>
+  </g>
+
+  <!-- Continuous Circular Ring with 5 Figures -->
+  <g id="community-ring">
+    <path d="M 172 121
+             A 135 135 0 0 1 328 121
+             A 100 100 0 0 0 172 121 Z" fill="url(#g0)"/>
+    <circle cx="250" cy="92" r="25" fill="url(#h0)"/>
+
+    <g transform="rotate(72, 250, 230)">
+      <path d="M 172 121
+               A 135 135 0 0 1 328 121
+               A 100 100 0 0 0 172 121 Z" fill="url(#g1)"/>
+      <circle cx="250" cy="92" r="25" fill="url(#h1)"/>
+    </g>
+
+    <g transform="rotate(144, 250, 230)">
+      <path d="M 172 121
+               A 135 135 0 0 1 328 121
+               A 100 100 0 0 0 172 121 Z" fill="url(#g2)"/>
+      <circle cx="250" cy="92" r="25" fill="url(#h2)"/>
+    </g>
+
+    <g transform="rotate(216, 250, 230)">
+      <path d="M 172 121
+               A 135 135 0 0 1 328 121
+               A 100 100 0 0 0 172 121 Z" fill="url(#g3)"/>
+      <circle cx="250" cy="92" r="25" fill="url(#h3)"/>
+    </g>
+
+    <g transform="rotate(288, 250, 230)">
+      <path d="M 172 121
+               A 135 135 0 0 1 328 121
+               A 100 100 0 0 0 172 121 Z" fill="url(#g4)"/>
+      <circle cx="250" cy="92" r="25" fill="url(#h4)"/>
+    </g>
+  </g>
 </svg>
