@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard,
   Monitor,
@@ -11,17 +11,18 @@ import {
   ChevronLeft,
   ChevronRight,
   Plus,
+  ArrowLeft,
 } from 'lucide-react';
 import { useAlertStore } from '../../store/alertStore';
 
 const navItems = [
-  { to: '/', label: 'Overview', icon: LayoutDashboard },
-  { to: '/equipment', label: 'Equipment', icon: Monitor },
-  { to: '/monitoring', label: 'Live Monitoring', icon: Activity },
-  { to: '/maintenance', label: 'Maintenance', icon: Wrench },
-  { to: '/alerts', label: 'Alerts & Events', icon: Bell },
-  { to: '/resources', label: 'Resource Status', icon: Package },
-  { to: '/settings', label: 'Settings', icon: Settings },
+  { to: '/dashboard', label: 'Overview', icon: LayoutDashboard },
+  { to: '/dashboard/equipment', label: 'Equipment', icon: Monitor },
+  { to: '/dashboard/monitoring', label: 'Live Monitoring', icon: Activity },
+  { to: '/dashboard/maintenance', label: 'Maintenance', icon: Wrench },
+  { to: '/dashboard/alerts', label: 'Alerts & Events', icon: Bell },
+  { to: '/dashboard/resources', label: 'Resource Status', icon: Package },
+  { to: '/dashboard/settings', label: 'Settings', icon: Settings },
 ] as const;
 
 interface SidebarProps {
@@ -30,6 +31,7 @@ interface SidebarProps {
 }
 
 export function Sidebar({ collapsed, onToggle }: SidebarProps) {
+  const navigate = useNavigate();
   const activeAlerts = useAlertStore((s) => s.alerts.filter((a) => a.status === 'active').length);
 
   return (
@@ -57,7 +59,7 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
             <li key={to}>
               <NavLink
                 to={to}
-                end={to === '/'}
+                end={to === '/dashboard'}
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3 py-2 rounded text-sm font-medium transition-colors
                    ${isActive
@@ -82,6 +84,19 @@ export function Sidebar({ collapsed, onToggle }: SidebarProps) {
           ))}
         </ul>
       </nav>
+
+      {/* Back to Homepage */}
+      <div className="px-2 pb-2 border-t border-navy-700 pt-2">
+        <button
+          onClick={() => navigate('/')}
+          className={`flex items-center gap-3 px-3 py-2 rounded text-sm font-medium w-full text-navy-300 hover:bg-navy-800 hover:text-white transition-colors`}
+          title={collapsed ? 'Back to Homepage' : undefined}
+          style={{ background: 'transparent', border: 'none', cursor: 'pointer' }}
+        >
+          <ArrowLeft className="w-[18px] h-[18px] shrink-0" />
+          {!collapsed && <span className="whitespace-nowrap">← Homepage</span>}
+        </button>
+      </div>
 
       {/* Collapse toggle */}
       <button

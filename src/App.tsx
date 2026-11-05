@@ -8,12 +8,13 @@ import { Maintenance } from './pages/Maintenance';
 import { AlertsEvents } from './pages/AlertsEvents';
 import { ResourceStatus } from './pages/ResourceStatus';
 import { Settings } from './pages/Settings';
+import { HomePage } from './pages/home/HomePage';
 import { useSimulation } from './hooks/useSimulation';
 import { useSimulationStore } from './store/simulationStore';
 
-function AppContent() {
+function DashboardContent() {
   // Initialize the simulation lifecycle hook
-  const { isRunning, toggle } = useSimulation();
+  const { isRunning: _isRunning } = useSimulation();
   const setRunning = useSimulationStore((s) => s.setRunning);
 
   // Auto-start simulation on prototype initial load
@@ -31,7 +32,7 @@ function AppContent() {
         <Route path="alerts" element={<AlertsEvents />} />
         <Route path="resources" element={<ResourceStatus />} />
         <Route path="settings" element={<Settings />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/dashboard" replace />} />
       </Route>
     </Routes>
   );
@@ -40,7 +41,16 @@ function AppContent() {
 export default function App() {
   return (
     <BrowserRouter>
-      <AppContent />
+      <Routes>
+        {/* Public homepage */}
+        <Route path="/" element={<HomePage />} />
+
+        {/* Operator dashboard (all existing pages preserved under /dashboard) */}
+        <Route path="/dashboard/*" element={<DashboardContent />} />
+
+        {/* Catch-all → homepage */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </BrowserRouter>
   );
 }

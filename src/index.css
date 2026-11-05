@@ -82,3 +82,161 @@ body {
 .demo-banner {
   @apply bg-amber-50 border border-amber-200 text-amber-700 text-xs font-medium px-3 py-1.5 rounded;
 }
+
+/* ===== Homepage: 3D Cross Orbital Lines Animation (Understated & Slow) ===== */
+@keyframes hero-orbit-spin-1 {
+  0% { transform: rotate(-28deg) rotate(0deg); }
+  100% { transform: rotate(-28deg) rotate(360deg); }
+}
+
+@keyframes hero-orbit-spin-2 {
+  0% { transform: rotate(38deg) rotate(0deg); }
+  100% { transform: rotate(38deg) rotate(-360deg); }
+}
+
+@keyframes hero-orbit-spin-3 {
+  0% { transform: rotate(-8deg) rotate(0deg); }
+  100% { transform: rotate(-8deg) rotate(360deg); }
+}
+
+.hero-orbit-1 {
+  animation: hero-orbit-spin-1 42s linear infinite;
+}
+
+.hero-orbit-2 {
+  animation: hero-orbit-spin-2 48s linear infinite;
+}
+
+.hero-orbit-3 {
+  animation: hero-orbit-spin-3 55s linear infinite;
+}
+
+/* ===== Homepage: Central Light Element Gentle Breathing ===== */
+@keyframes center-dot-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+@keyframes center-pulse-breathe {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.45;
+  }
+}
+
+.hero-center-dot {
+  animation: center-dot-breathe 6s ease-in-out infinite;
+}
+
+.hero-center-pulse {
+  animation: center-pulse-breathe 6s ease-in-out infinite;
+}
+
+/* ===== Homepage: ECG Heartbeat Traveling Glowing Dot Pulse ===== */
+@keyframes ecg-dot-pulse {
+  0%, 100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.hero-ecg-traveler {
+  animation: ecg-dot-pulse 3s ease-in-out infinite;
+}
+
+/* ===== Homepage: Floating Particle Drift ===== */
+@keyframes particle-drift {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(12px, -18px) scale(1.2);
+    opacity: 0.85;
+  }
+}
+
+.hero-particle-drift {
+  animation: particle-drift ease-in-out infinite alternate;
+}
+
+/* ===== Homepage: Abstract Bottom Wave Flow ===== */
+@keyframes wave-slide-1 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes wave-slide-2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes wave-slide-3 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hero-wave-anim-1 {
+  animation: wave-slide-1 24s linear infinite;
+}
+
+.hero-wave-anim-2 {
+  animation: wave-slide-2 18s linear infinite;
+}
+
+.hero-wave-anim-3 {
+  animation: wave-slide-3 22s linear infinite;
+}
+
+/* ===== Homepage: Subtle background plus symbols slow float ===== */
+@keyframes faint-cross-float-1 {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-8px) scale(1.05); }
+}
+
+@keyframes faint-cross-float-2 {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(6px) scale(0.95); }
+}
+
+.hero-faint-cross-1 {
+  animation: faint-cross-float-1 12s ease-in-out infinite;
+}
+
+.hero-faint-cross-2 {
+  animation: faint-cross-float-2 15s ease-in-out infinite;
+}
+
+/* ===== Homepage: Smooth scroll ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Homepage: Card hover lift ===== */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Homepage: Search panel glass ===== */
+.search-glass {
+  background: rgba(190, 234, 242, 0.14);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}

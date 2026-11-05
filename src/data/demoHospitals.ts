@@ -1,0 +1,82 @@
+// ⚠️ DEMO DATA — not connected to any live database.
+// Replace with real Supabase queries when backend integration is approved.
+
+import type { DemoHospital } from '../types/hospital';
+
+export const DEMO_HOSPITALS: DemoHospital[] = [
+  {
+    id: 'demo-1',
+    name: 'SANJOE HOSPITAL',
+    verified: true,
+    distanceKm: 10.5,
+    driveMinutes: 13,
+    address: 'AM ROAD, Ernakulam, Kerala',
+    imageUrl: 'https://images.unsplash.com/photo-1587351021355-a479a299d2f9?w=240&h=180&fit=crop',
+    phone: '+914842800108',
+    lat: 9.9312,
+    lng: 76.2673,
+    tags: ['ICU', 'Ventilator', 'Oxygen', 'Emergency'],
+    resources: [
+      { label: 'ICU Beds', available: 12, total: 20, tag: 'ICU' },
+      { label: 'Ventilators', available: 8, total: 10, tag: 'Ventilator' },
+      { label: 'Oxygen', available: 20, total: 24, tag: 'Oxygen' },
+    ],
+    lastUpdated: new Date(Date.now() - 25 * 60 * 1000).toISOString(),
+  },
+  {
+    id: 'demo-2',
+    name: 'VATHIYAYATH HOSPITAL',
+    verified: true,
+    distanceKm: 10.7,
+    driveMinutes: 13,
+    address: 'PP ROAD, PERUMBAVOOR, Ernakulam',
+    imageUrl: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=240&h=180&fit=crop',
+    phone: '+914852232445',
+    lat: 10.1073,
+    lng: 76.4170,
+    tags: ['ICU', 'Ventilator', 'Oxygen'],
+    resources: [
+      { label: 'ICU Beds', available: 15, total: 24, tag: 'ICU' },
+      { label: 'Ventilators', available: 10, total: 12, tag: 'Ventilator' },
+      { label: 'Oxygen', available: 18, total: 20, tag: 'Oxygen' },
+    ],
+    lastUpdated: new Date(Date.now() - 95 * 60 * 1000).toISOString(),
+  },
+  {
+    id: 'demo-3',
+    name: 'LAKESHORE HOSPITAL',
+    verified: true,
+    distanceKm: 12.1,
+    driveMinutes: 17,
+    address: 'NH 47 Bye-Pass, Maradu, Kochi, Kerala',
+    imageUrl: 'https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=240&h=180&fit=crop',
+    phone: '+914842701032',
+    lat: 9.9601,
+    lng: 76.3034,
+    tags: ['ICU', 'Oxygen', 'Emergency', '24/7 Trauma'],
+    resources: [
+      { label: 'ICU Beds', available: 6, total: 30, tag: 'ICU' },
+      { label: 'Oxygen', available: 25, total: 30, tag: 'Oxygen' },
+    ],
+    lastUpdated: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
+  },
+  {
+    id: 'demo-4',
+    name: 'AMRITA INSTITUTE OF MEDICAL SCIENCES',
+    verified: true,
+    distanceKm: 14.3,
+    driveMinutes: 21,
+    address: 'AIMS Ponekkara, Ernakulam, Kerala',
+    imageUrl: 'https://images.unsplash.com/photo-1626315869436-d6781ba69d6e?w=240&h=180&fit=crop',
+    phone: '+914842851234',
+    lat: 10.0067,
+    lng: 76.3067,
+    tags: ['ICU', 'Ventilator', 'Oxygen', 'Emergency', 'Burn Unit'],
+    resources: [
+      { label: 'ICU Beds', available: 20, total: 50, tag: 'ICU' },
+      { label: 'Ventilators', available: 18, total: 25, tag: 'Ventilator' },
+      { label: 'Oxygen', available: 40, total: 50, tag: 'Oxygen' },
+    ],
+    lastUpdated: new Date(Date.now() - 8 * 60 * 1000).toISOString(),
+  },
+];

@@ -6,13 +6,13 @@ import { useSimulationStore } from '../../store/simulationStore';
 import { format } from 'date-fns';
 
 const pageTitles: Record<string, string> = {
-  '/': 'Overview',
-  '/equipment': 'Equipment Inventory',
-  '/monitoring': 'Live Monitoring',
-  '/maintenance': 'Maintenance',
-  '/alerts': 'Alerts & Events',
-  '/resources': 'Resource Status',
-  '/settings': 'Settings',
+  '/dashboard': 'Overview',
+  '/dashboard/equipment': 'Equipment Inventory',
+  '/dashboard/monitoring': 'Live Monitoring',
+  '/dashboard/maintenance': 'Maintenance',
+  '/dashboard/alerts': 'Alerts & Events',
+  '/dashboard/resources': 'Resource Status',
+  '/dashboard/settings': 'Settings',
 };
 
 interface TopBarProps {
