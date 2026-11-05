@@ -51,19 +51,16 @@ export function HomePage() {
           {/* Feature strip */}
           <FeatureStrip />
 
-          {/* Main Content Layout: Left 68% Hospitals / Right 32% Side Panels */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left Column: Hospital List & Filters */}
-            <div className="lg:col-span-8">
-              <HospitalsSection hospitals={displayedHospitals} />
-            </div>
-
-            {/* Right Column: Emergency Hotline & Staff Access */}
-            <aside className="lg:col-span-4 flex flex-col gap-6 sticky top-24">
-              <EmergencyPanel />
-              <StaffPanel />
-            </aside>
-          </div>
+          {/* Main Discovery Interface: Left Filters, Center Hospitals, Right Emergency & Staff */}
+          <HospitalsSection
+            hospitals={displayedHospitals}
+            rightSidebar={
+              <>
+                <EmergencyPanel />
+                <StaffPanel />
+              </>
+            }
+          />
         </div>
       </main>
 

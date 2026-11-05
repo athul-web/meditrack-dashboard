@@ -25,4 +25,10 @@ export interface DemoHospital {
 
 export type ResourceFilter = 'All' | 'ICU' | 'Ventilator' | 'Oxygen' | 'Emergency';
 export type QuickAccessTag = 'ICU' | 'Ventilator' | 'Oxygen' | '24/7 Trauma' | 'Burn Unit';
-export type SortOption = 'Nearest' | 'Farthest' | 'Recently Updated';
+export type SortOption = 'Nearest' | 'Farthest' | 'Highest Availability' | 'Recently Updated';
+
+export interface FilterState {
+  resourceTypes: ('ICU' | 'Ventilator' | 'Oxygen' | 'Emergency')[];
+  availabilityStatus: 'all' | 'available' | 'limited';
+  maxDistanceKm: number | null; // null means any distance
+}
